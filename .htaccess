@@ -1,0 +1,19 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /TheMusicWeShare/
+ErrorDocument 404 /TheMusicWeShare/views/404.php
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+# domain.com/blahblah -> domain.com/blahblah/
+RewriteRule ^(([a-z0-9\-]+/)*[a-z0-9\-]+)$ $1/ [NC,R=301,L]
+RewriteRule ^([DM][0-9]*?)/$ controllers/controller.php?loc=5&id=$1 [NC]
+RewriteRule ^\/?$ controllers/controller.php?loc=1 [NC]
+RewriteRule ^add/$ controllers/controller.php?loc=2 [NC]
+RewriteRule ^discover/page/([0-9]*?)/$ controllers/controller.php?loc=3&page=$1 [NC]
+RewriteRule ^discover/$ controllers/controller.php?loc=3 [NC]
+RewriteRule ^all/page/([0-9]*?)/$ controllers/controller.php?loc=4&page=$1 [NC]
+RewriteRule ^all/$ controllers/controller.php?loc=4 [NC]
+RewriteRule ^([a-z0-9\-\_]*?)/page/([0-9]*?)/$ controllers/controller.php?loc=4&type=$1&page=$2 [NC]
+RewriteRule ^([a-z0-9\-\_]*?)/$ controllers/controller.php?loc=4&type=$1 [NC]

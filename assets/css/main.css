@@ -1,0 +1,108 @@
+a{
+	color:inherit;
+	margin:0;
+	border:0;
+	padding:0;
+	text-decoration:inherit;
+}
+a:hover{
+    color:inherit;
+    text-decoration:inherit;
+}
+a:focus{
+	color:inherit;
+	text-decoration:none;
+}
+body{
+	padding:0;
+	margin:0;
+	background-color: rgba(188,34,57,0.49);
+	background-image: url(../images/paperTexture.png);
+	font-family: 'Cardo', serif;
+	height:100%;
+	width:100%;
+	min-width:530px;
+}
+.eachVideoBox{
+	margin:10px;
+	float:left;
+	height:326px;
+	width:350px;
+	border:13px solid transparent;
+	border-left:13px solid #940000;
+	overflow:hidden;
+}
+.eachVideoBox .embedded{
+	position:relative;
+	width:300px;
+	background:black;
+	height:300px;
+	float:left;
+}
+.eachVideoBox .extra{
+	position:relative;
+	width:24px;
+	float:left;
+	font-size:20px;
+	text-align:center;
+	vertical-align:center;
+	padding-top:136px;
+}
+h1{
+	margin:0;
+	border:0;
+	padding:0;
+	font-family: 'Tangerine', cursive;
+	font-size:40px;
+}
+h2{
+	margin:0;
+	border:0;
+	padding:0;
+	font-family: 'Tangerine', cursive;
+	font-size:35px;
+}
+#title{
+	padding-top:24px;
+}
+#sidebar{
+	text-align:right;
+	font-size:20px;
+	padding-top:16px;
+	padding-right:20px;
+}
+#content{
+	padding-top:16px;
+	font-size:14px;
+	padding-left:20px;
+}
+.typeList{
+	list-style-type: none;
+	border:0;
+	margin:0;
+	margin-top:16px;
+	padding:0;
+}
+.option{
+	transition: color 0.2s;
+	-webkit-transition: color 0.2s;
+	-moz-transition: color 0.2s;
+	-o-transition: color 0.2s;
+	cursor:pointer;
+}
+.option:hover{
+	color: rgba(0,91,255,0.75);
+}
+.pageButtons{
+	text-align:center;
+	display:block;
+	font-size:20px;
+	margin-bottom:20px;
+}
+.pageButtons a{
+	color:black;
+	text-decoration:none;
+}
+.active{
+	font-weight:700;
+}
