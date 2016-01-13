@@ -199,7 +199,9 @@ elseif($mode == 6){ //gift
             $idnum = substr($gift['vid_id'], 1);
             if($gift['vid_id'][0] == 'M'){
                 $musicRaw = mysqli_query($con, "SELECT * from music WHERE id=$idnum");
-                $music[] = mysqli_fetch_array($musicRaw);
+                $temp = mysqli_fetch_array($musicRaw);
+                $temp['id'] = 'M'.$temp['id'];
+                $music[] = $temp;
             }
             elseif($gift['vid_id'][0] == 'D'){
                 $musicRaw = mysqli_query($con, "SELECT * from discovered WHERE id=$idnum");
@@ -207,10 +209,12 @@ elseif($mode == 6){ //gift
                 $temp["embed"] = '&lt;iframe width=&quot;300&quot; height=&quot;300&quot; src=&quot;https://www.youtube.com/embed/'
                     .$temp['link'].
                     '&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';
+                $temp['id'] = 'D'.$temp['id'];    
                 $music[] = $temp;
             }
         }
         $numPages = 0;
+        $code="";
         include('../views/music.php');
         exit;
     }
