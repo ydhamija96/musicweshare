@@ -126,6 +126,7 @@ elseif($mode == 4){ //music
         include('../views/404.php');
         exit;
     }
+    $code = 'M';
     include('../views/music.php');
     exit;
 }
@@ -209,7 +210,7 @@ elseif($mode == 6){ //gift
                 $temp["embed"] = '&lt;iframe width=&quot;300&quot; height=&quot;300&quot; src=&quot;https://www.youtube.com/embed/'
                     .$temp['link'].
                     '&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';
-                $temp['id'] = 'D'.$temp['id'];    
+                $temp['id'] = 'D'.$temp['id'];
                 $music[] = $temp;
             }
         }
