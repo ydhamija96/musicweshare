@@ -15,5 +15,7 @@ RewriteRule ^discover/page/([0-9]*?)/$ controllers/controller.php?loc=3&page=$1 
 RewriteRule ^discover/$ controllers/controller.php?loc=3 [NC]
 RewriteRule ^all/page/([0-9]*?)/$ controllers/controller.php?loc=4&page=$1 [NC]
 RewriteRule ^all/$ controllers/controller.php?loc=4 [NC]
+RewriteRule ^gift/$ controllers/controller.php?loc=6 [NC]
+RewriteRule ^gift/([DM][0-9]*?)/$ controllers/controller.php?loc=6&id=$1 [NC]
 RewriteRule ^([a-z0-9\-\_]*?)/page/([0-9]*?)/$ controllers/controller.php?loc=4&type=$1&page=$2 [NC]
 RewriteRule ^([a-z0-9\-\_]*?)/$ controllers/controller.php?loc=4&type=$1 [NC]

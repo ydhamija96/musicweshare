@@ -11,6 +11,10 @@
                     <a target="_blank" href="<?php echo Config::get('base')."M".$music[$i]['id']."/"; ?>">
                         <span class="glyphicon glyphicon-share option" aria-hidden="true"></span>
                     </a>
+                    <a target="invisibleFrame" href="<?php echo Config::get('base')."gift/M".$music[$i]['id']."/"; ?>">
+                        <span class="glyphicon glyphicon-gift option" aria-hidden="true"></span>
+                    </a>
+                    <iframe name="invisibleFrame" id="invisibleFrame"></iframe>
                 </div>
             </div>
     </div>

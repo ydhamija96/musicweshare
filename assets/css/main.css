@@ -106,3 +106,17 @@ h2{
 .active{
 	font-weight:700;
 }
+#invisibleFrame{
+	height:0px;
+	width:0px;
+	padding:0px;
+	margin:0px;
+	border:none;
+	position:absolute;
+}
+.giftbox{
+	font-size:50px;
+	display:block;
+	text-align:center;
+	margin-bottom:20px;
+}
