@@ -10,10 +10,10 @@
                     ?>
                 </div>
                 <div class="extra">
-                    <a target="_blank" href="<?php echo Config::get('base')."D".$music[$i]['id']."/"; ?>">
+                    <a target="_blank" rel="nofollow" href="<?php echo Config::get('base')."D".$music[$i]['id']."/"; ?>">
                         <span class="glyphicon glyphicon-share option" aria-hidden="true"></span>
                     </a>
-                    <a target="invisibleFrame" href="<?php echo Config::get('base')."gift/D".$music[$i]['id']."/"; ?>">
+                    <a target="invisibleFrame" rel="nofollow" href="<?php echo Config::get('base')."gift/D".$music[$i]['id']."/"; ?>">
                         <span class="glyphicon glyphicon-gift option" aria-hidden="true"></span>
                     </a>
                     <iframe name="invisibleFrame" id="invisibleFrame"></iframe>

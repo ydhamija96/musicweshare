@@ -8,10 +8,10 @@
                     <?php echo html_entity_decode($music[$i]['embed'], ENT_QUOTES); ?>
                 </div>
                 <div class="extra">
-                    <a target="_blank" href="<?php echo Config::get('base').$code.$music[$i]['id']."/"; ?>">
+                    <a target="_blank" rel="nofollow" href="<?php echo Config::get('base').$code.$music[$i]['id']."/"; ?>">
                         <span class="glyphicon glyphicon-share option" aria-hidden="true"></span>
                     </a>
-                    <a target="invisibleFrame" href="<?php echo Config::get('base')."gift/".$code.$music[$i]['id']."/"; ?>">
+                    <a target="invisibleFrame" rel="nofollow" href="<?php echo Config::get('base')."gift/".$code.$music[$i]['id']."/"; ?>">
                         <span class="glyphicon glyphicon-gift option" aria-hidden="true"></span>
                     </a>
                     <iframe name="invisibleFrame" id="invisibleFrame"></iframe>
