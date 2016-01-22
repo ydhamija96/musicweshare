@@ -3,11 +3,18 @@ RewriteEngine On
 RewriteBase /TheMusicWeShare/
 ErrorDocument 404 /TheMusicWeShare/views/404.php
 
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteCond %{HTTPS} on
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
-
-# domain.com/blahblah -> domain.com/blahblah/
 RewriteRule ^(([a-z0-9\-]+/)*[a-z0-9\-]+)$ $1/ [NC,R=301,L]
+
 RewriteRule ^([DM][0-9]*?)/$ controllers/controller.php?loc=5&id=$1 [NC]
 RewriteRule ^\/?$ controllers/controller.php?loc=1 [NC]
 RewriteRule ^add/$ controllers/controller.php?loc=2 [NC]
