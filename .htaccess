@@ -1,7 +1,7 @@
 Options +FollowSymLinks
 RewriteEngine On
-RewriteBase /TheMusicWeShare/
-ErrorDocument 404 /TheMusicWeShare/views/404.php
+RewriteBase /musicweshare/
+ErrorDocument 404 /musicweshare/views/404.php
 
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]

@@ -1,9 +1,9 @@
 <?php
 class Config{
     private static $config = [
-        'assetsPath' => 'http://localhost/TheMusicWeShare/assets/',
-        'controllersPath' => 'http://localhost/TheMusicWeShare/controllers/',
-        'base' => 'http://localhost/TheMusicWeShare/'
+        'assetsPath' => 'http://localhost/musicweshare/assets/',
+        'controllersPath' => 'http://localhost/musicweshare/controllers/',
+        'base' => 'http://localhost/musicweshare/'
     ];
     private static $mysqlConnection = 0;
 
@@ -12,7 +12,7 @@ class Config{
     }
     public static function databaseConnection(){
         if(self::$mysqlConnection === 0){
-        	self::$mysqlConnection=mysqli_connect("localhost","root","","themusicweshare");
+        	self::$mysqlConnection=mysqli_connect("localhost","root","","musicweshare");
         	if (mysqli_connect_errno()){
         		echo "Failed to connect to MySQL: " . mysqli_connect_error();
         	}
