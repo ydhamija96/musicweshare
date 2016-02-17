@@ -24,8 +24,8 @@
 	Now, you gotta give me the password.<br>
 	Just put that right here: <input name="password" type="password"><br><br>
 	Shiny! Now, press the submit button, and we're golden.<br>
-	<strong>Beware: Once added, music cannot be removed.</strong><br>
-	<input type="submit" value="Submit"><br><br>
+	Beware: Once added, music cannot be removed.<br>
+	<input type="submit" class="submit-button option" value="Submit"><br><br>
 </form>
 
 <iframe name="theFrame" style="height:0px; width:0px; display:none; margin:0; padding:0; border:0;"></iframe>
