@@ -103,6 +103,7 @@ h2{
 .pageButtons a{
 	color:black;
 	text-decoration:none;
+	margin-right:6px;
 }
 .active{
 	font-weight:700;
