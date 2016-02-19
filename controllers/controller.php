@@ -65,7 +65,12 @@ elseif($mode == 3){ //discover
     $musicRaw = mysqli_query($con, "SELECT * from discovered ORDER BY date DESC, id DESC LIMIT $perpage OFFSET $offset");
     $music = [];
     while($row = mysqli_fetch_array($musicRaw)){
-        $music[] = $row;
+        $temp = $row;
+        $temp['embed'] = '
+            &lt;iframe width=&quot;300&quot; height=&quot;300&quot; src=&quot;https://www.youtube.com/embed/'
+            .$row['link']
+            .'&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';
+        $music[] = $temp;
     }
     $counter = mysqli_query($con, "SELECT COUNT(*) AS id FROM discovered");
     $num = mysqli_fetch_array($counter);
@@ -76,7 +81,8 @@ elseif($mode == 3){ //discover
         include('../views/404.php');
         exit;
     }
-    include('../views/discover.php');
+    $code = 'D';
+    include('../views/music.php');
     exit;
 }
 elseif($mode == 4){ //music

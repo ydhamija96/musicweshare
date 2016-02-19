@@ -40,4 +40,16 @@
     <?php endif; ?>
 </div>
 
+<?php if($code == 'D'): ?>
+    <script>
+    	$.ajax({
+    		url: "<?php echo Config::get('controllersPath'); ?>discoveryController.php",
+    		success: function(result){
+    			console.log("Update Request Output: ");
+    			console.log(result);
+    		}
+    	});
+    </script>
+<?php endif; ?>
+
 <?php include('includes/closing.php') ?>
