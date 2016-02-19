@@ -43,11 +43,11 @@ elseif($mode == 1){ //message
     $message = file_get_contents(Config::get('assetsPath')."message.html");
     include('../views/message.php');
     exit;
-}
+} //message
 elseif($mode == 2){ //add
     include('../views/add.php');
     exit;
-}
+} //add
 elseif($mode == 3){ //discover
     $count = 0;
     if(isset($_GET['page'])){
@@ -84,7 +84,7 @@ elseif($mode == 3){ //discover
     $code = 'D';
     include('../views/music.php');
     exit;
-}
+} //discover
 elseif($mode == 4){ //music
     $seed = 0;
     $count = 0;
@@ -135,7 +135,7 @@ elseif($mode == 4){ //music
     $code = 'M';
     include('../views/music.php');
     exit;
-}
+} //music
 elseif($mode == 5){ //single ID
     $id = -1;
     if(isset($_GET['id'])){
@@ -169,7 +169,7 @@ elseif($mode == 5){ //single ID
     }
     include('../views/single.php');
     exit;
-}
+}//single ID
 elseif($mode == 6){ //gift
     if(isset($_COOKIE['gifts'])){
         $sentGifts = json_decode($_COOKIE['gifts'], true);
@@ -225,7 +225,7 @@ elseif($mode == 6){ //gift
         include('../views/music.php');
         exit;
     }
-}
+}//gift
 else{
     header("HTTP/1.0 404 Not Found");
     include('../views/404.php');

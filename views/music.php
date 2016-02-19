@@ -1,6 +1,7 @@
 <?php include('includes/title.php') ?>
 <?php include('includes/sidebar.php') ?>
 
+<!-- Videos -->
 <?php for($i = 0; $i < count($music); ++$i): ?>
     <div id="videoHolder">
         <div class='eachVideoBox'>
@@ -18,7 +19,7 @@
     </div>
 <?php endfor; ?>
 
-
+<!-- Page number buttons -->
 <div class="pageButtons col-xs-9">
     <?php if($numPages > 1): ?>
         <?php for($i = 1; $i <= $numPages; ++$i):
@@ -41,6 +42,7 @@
     <?php endif; ?>
 </div>
 
+<!-- JS to load videos only when they scroll into view -->
 <script>
     var embeds = [
         <?php
@@ -78,6 +80,7 @@
     });
 </script>
 
+<!-- Ajax to update discovered videos -->
 <?php if($code == 'D'): ?>
     <script>
     	$.ajax({
