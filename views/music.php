@@ -3,20 +3,18 @@
 
 <?php for($i = 0; $i < count($music); ++$i): ?>
     <div id="videoHolder">
-            <div class='eachVideoBox'>
-                <div class="embedded">
-                    <?php echo html_entity_decode($music[$i]['embed'], ENT_QUOTES); ?>
-                </div>
-                <div class="extra">
-                    <a target="_blank" rel="nofollow" href="<?php echo Config::get('base').$code.$music[$i]['id']."/"; ?>">
-                        <span class="glyphicon glyphicon-share option" aria-hidden="true"></span>
-                    </a>
-                    <a target="invisibleFrame" rel="nofollow" href="<?php echo Config::get('base')."gift/".$code.$music[$i]['id']."/"; ?>">
-                        <span class="glyphicon glyphicon-gift option" aria-hidden="true"></span>
-                    </a>
-                    <iframe name="invisibleFrame" id="invisibleFrame"></iframe>
-                </div>
+        <div class='eachVideoBox'>
+            <div class="embedded" id='embed<?php echo $i; ?>'></div>
+            <div class="extra">
+                <a target="_blank" rel="nofollow" href="<?php echo Config::get('base').$code.$music[$i]['id']."/"; ?>">
+                    <span class="glyphicon glyphicon-share option" aria-hidden="true"></span>
+                </a>
+                <a target="invisibleFrame" rel="nofollow" href="<?php echo Config::get('base')."gift/".$code.$music[$i]['id']."/"; ?>">
+                    <span class="glyphicon glyphicon-gift option" aria-hidden="true"></span>
+                </a>
+                <iframe name="invisibleFrame" id="invisibleFrame"></iframe>
             </div>
+        </div>
     </div>
 <?php endfor; ?>
 
@@ -27,6 +25,9 @@
             $link = Config::get('base');
             if($selectedGenre){
                 $link = $link.$selectedGenre."/page/";
+            }
+            elseif($code == 'D'){
+                $link = $link."discover/page/";
             }
             else{
                 $link = $link."all/page/";
@@ -39,6 +40,43 @@
         <?php endfor; ?>
     <?php endif; ?>
 </div>
+
+<script>
+    var embeds = [
+        <?php
+            foreach($music as $i){
+                echo "'".trim(html_entity_decode($i['embed'], ENT_QUOTES))."',";
+            }
+        ?>
+    ];
+    var perpage = <?php echo $perpage; ?>;
+    function isScrolledIntoView(elem){
+        var $elem = $(elem);
+        var $window = $(window);
+        var docViewTop = $window.scrollTop();
+        var docViewBottom = docViewTop + $window.height();
+        var elemTop = $elem.offset().top;
+        var elemBottom = elemTop + $elem.height();
+        //return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+        return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
+    }
+    var nextload = 0;
+    function load(){
+        if(nextload < perpage){
+            if(isScrolledIntoView("#embed"+nextload)){
+                $("#embed"+nextload).html(embeds[nextload]);
+                ++nextload;
+                load();
+            }
+        }
+    }
+    $(function() {
+        load();
+        $( document ).scroll(function(){
+            load();
+        });
+    });
+</script>
 
 <?php if($code == 'D'): ?>
     <script>
