@@ -9,8 +9,10 @@ $json = file_get_contents('http://www.reddit.com/r/listentothis/top/.json?' . $a
 $obj = json_decode($json);
 foreach($obj->data->children as $single){
     if(strpos($single->data->domain,'youtube') !== false){
-        $ar = preg_split('/watch\?v=/', $single->data->secure_media->oembed->url);
+        echo($single->data->secure_media->oembed->html."<br>");
+        $ar = preg_split('/embed/', $single->data->secure_media->oembed->html);
         $ar = preg_split('/\//', $ar[1]);
+        $ar = preg_split('/\?/', $ar[1]);
         array_push($videos, $ar[0]);
     }
 }
@@ -22,5 +24,5 @@ foreach($videos as $video){
         exit;
     }
 }
-echo "Content Updated.";
+echo "Content Updated: ".count($videos)." videos found.";
 ?>
