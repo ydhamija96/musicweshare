@@ -21,26 +21,73 @@
 
 <!-- Page number buttons -->
 <div class="pageButtons col-xs-9">
+    <?php 
+        $pageLink = Config::get('base');
+        if($selectedGenre){
+            $pageLink = $pageLink.$selectedGenre."/page/";
+        }
+        elseif($code == 'D'){
+            $pageLink = $pageLink."discover/page/";
+        }
+        else{
+            $pageLink = $pageLink."all/page/";
+        }
+    ?>
     <?php if($numPages > 1): ?>
-        <?php for($i = 1; $i <= $numPages; ++$i):
-            $link = Config::get('base');
-            if($selectedGenre){
-                $link = $link.$selectedGenre."/page/";
-            }
-            elseif($code == 'D'){
-                $link = $link."discover/page/";
-            }
-            else{
-                $link = $link."all/page/";
-            }
-            $link = $link.$i."/";
+        <?php if($page >4): ?>
+            <?php
+                $link = $pageLink."1/";
             ?>
-            <a href="<?php echo $link; ?>" class="option <?php if($i == $page){echo "active";} ?>">
-                <?php echo $i; ?>
+            <a href="<?php echo $link; ?>" class="option <?php if('1' == $page){echo "active";} ?>">
+                <?php echo '1'; ?>
             </a>
-        <?php endfor; ?>
+        <?php endif; ?> 
+        <?php if($page > 5): ?>
+            ...
+        <?php endif; ?>
+        <?php for($i = $page - 3; $i <= $page + 3; ++$i):
+            if($i > 0 && $i <= $numPages){
+                $link = $pageLink.$i."/";
+                ?>
+                <a href="<?php echo $link; ?>" class="option <?php if($i == $page){echo "active";} ?>">
+                    <?php echo $i; ?>
+                </a>
+            <?php } ?>
+        <?php endfor; ?>    
+        <?php if($page < $numPages - 4): ?>
+            ...
+        <?php endif; ?>
+        <?php if($page < $numPages - 3): ?>
+            <?php
+                $link = $pageLink.$numPages."/";
+            ?>
+            <a href="<?php echo $link; ?>" class="option <?php if($numPages == $page){echo "active";} ?>">
+                <?php echo $numPages; ?>
+            </a>
+        <?php endif; ?>    
+    <?php endif; ?>
+    <?php if($numPages > 5): ?>
+        <br />
+        <select id="directPage">
+            <?php for($i = 1; $i <= $numPages; ++$i){
+                $link = $pageLink.$i."/";
+                if($page == $i){
+                    echo("<option value=\"".$link."\" selected='selected'>".$i."</option>");                    
+                }
+                else{
+                    echo("<option value=\"".$link."\">".$i."</option>");
+                }
+            } ?>
+        </select>
+        <button type="button" onClick="goToPage()">Go</button>
     <?php endif; ?>
 </div>
+<!-- JS to go directly to page on click button -->
+<script>
+    function goToPage(){
+        window.location.href = $("#directPage").val();
+    }
+</script>
 
 <!-- JS to load videos only when they scroll into view -->
 <script>
