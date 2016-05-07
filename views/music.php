@@ -68,24 +68,14 @@
     <?php endif; ?>
     <?php if($numPages > 5): ?>
         <br />
-        <select id="directPage">
-            <?php for($i = 1; $i <= $numPages; ++$i){
-                $link = $pageLink.$i."/";
-                if($page == $i){
-                    echo("<option value=\"".$link."\" selected='selected'>".$i."</option>");                    
-                }
-                else{
-                    echo("<option value=\"".$link."\">".$i."</option>");
-                }
-            } ?>
-        </select>
+        <input type="number" min="0" max="<?php echo $numPages; ?>" id="directPage">
         <button type="button" onClick="goToPage()">Go</button>
     <?php endif; ?>
 </div>
 <!-- JS to go directly to page on click button -->
 <script>
     function goToPage(){
-        window.location.href = $("#directPage").val();
+        window.location.href = "<?php echo $pageLink; ?>" + $("#directPage").val() + '/';
     }
 </script>
 
