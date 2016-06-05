@@ -10,9 +10,9 @@
                 <a target="_blank" rel="nofollow" href="<?php echo Config::get('base').$code.$music[$i]['id']."/"; ?>">
                     <span class="glyphicon glyphicon-share option" aria-hidden="true"></span>
                 </a>
-                <a target="invisibleFrame" rel="nofollow" href="<?php echo Config::get('base')."gift/".$code.$music[$i]['id']."/"; ?>">
+                <!--<a target="invisibleFrame" rel="nofollow" href="<?php echo Config::get('base')."gift/".$code.$music[$i]['id']."/"; ?>">
                     <span class="glyphicon glyphicon-gift option" aria-hidden="true"></span>
-                </a>
+                </a>-->
                 <iframe name="invisibleFrame" id="invisibleFrame"></iframe>
             </div>
         </div>

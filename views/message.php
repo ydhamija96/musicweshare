@@ -8,9 +8,9 @@
 		</a>
 	<?php endif; ?>
 	<?php echo $message; ?>
-	<span class="glyphicon glyphicon-heart heart-icon" aria-hidden="true">
+	<!--<span class="glyphicon glyphicon-heart heart-icon" aria-hidden="true">
 		<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-	</span>
+	</span>-->
 </div>
 
 <?php include('includes/closing.php') ?>

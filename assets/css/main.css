@@ -16,7 +16,7 @@ a:focus{
 body{
 	padding:0;
 	margin:0;
-	background-color: #e9d4d4;
+	background-color: rgba(93, 115, 222, 0.15);
 	font-family: 'Cardo', serif;
 	height:100%;
 	width:100%;
@@ -147,4 +147,47 @@ h2{
 }
 #directPage{
 	width:50px
+}
+#newWhisper{
+	width:100%;
+	text-align:center;
+	border:none;
+	padding:none;
+	background:transparent;
+	color:#A50707;
+}
+.whisper{
+	width:100%;
+	margin:0px;
+	margin-top:-8px;
+	padding:0px;
+	border:none;
+	color: red;
+	font-family: 'Tangerine', cursive;
+	font-size:23px;
+	text-align:center;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:#A50707;
+    opacity:  0.6;
+	font-family: 'Tangerine', cursive;
+	font-size:23px;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:#A50707;
+    opacity:  0.6;
+	font-family: 'Tangerine', cursive;
+	font-size:23px;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:#A50707;
+    opacity:  0.6;
+	font-family: 'Tangerine', cursive;
+	font-size:23px;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:#A50707;
+    opacity:  0.6;
+	font-family: 'Tangerine', cursive;
+	font-size:23px;
 }

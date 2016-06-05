@@ -7,7 +7,7 @@ $allTypes = mysqli_query($con, "SELECT * FROM types");
 $showAll = false;
 $selectedGenre = false;
 if(isset($_GET['type'])){
-    $selectedGenre = true;
+    // $selectedGenre = true; //commented out to disable genre access from urls
 }
 $genres = [];
 while($row = mysqli_fetch_array($allTypes)){
@@ -33,6 +33,7 @@ elseif($mode == 1){ //message
     else{
         $sentGifts = [];
     }
+    $whispers = [];
     $giftsRAW = mysqli_query($con, "SELECT * FROM `presents` ORDER BY `presents`.`id` DESC");
     $gifts = false;
     while($row = mysqli_fetch_array($giftsRAW)){
@@ -45,6 +46,9 @@ elseif($mode == 1){ //message
     exit;
 } //message
 elseif($mode == 2){ //add
+    header("HTTP/1.0 404 Not Found");
+    include('../views/404.php');
+    exit;
     include('../views/add.php');
     exit;
 } //add
@@ -157,6 +161,9 @@ elseif($mode == 5){ //single ID
         $embed = '&lt;iframe width=&quot;300&quot; height=&quot;300&quot; src=&quot;https://www.youtube.com/embed/'.$embed.'&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';
     }
     elseif($code == 'M'){
+        header("HTTP/1.0 404 Not Found");
+        include('../views/404.php');
+        exit;
         $table = "music";
 		$res = mysqli_query($con, "SELECT * from $table WHERE id = '$id'");
 		$resa = mysqli_fetch_array($res);
@@ -171,6 +178,9 @@ elseif($mode == 5){ //single ID
     exit;
 }//single ID
 elseif($mode == 6){ //gift
+    header("HTTP/1.0 404 Not Found");
+    include('../views/404.php');
+    exit;
     if(isset($_COOKIE['gifts'])){
         $sentGifts = json_decode($_COOKIE['gifts'], true);
     }
