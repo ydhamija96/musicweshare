@@ -10,9 +10,9 @@
                 ?>
             </div>
             <div class="extra">
-                <a target="invisibleFrame" rel="nofollow" href="<?php echo Config::get('base')."gift/".$idString."/"; ?>">
+                <!-- <a target="invisibleFrame" rel="nofollow" href="<?php echo Config::get('base')."gift/".$idString."/"; ?>">
                     <span class="glyphicon glyphicon-gift option" aria-hidden="true"></span>
-                </a>
+                </a> -->
                 <iframe name="invisibleFrame" id="invisibleFrame"></iframe>
             </div>
         </div>
