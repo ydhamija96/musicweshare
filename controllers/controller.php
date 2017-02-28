@@ -66,8 +66,7 @@ elseif($mode == 3){ //discover
     $music = [];
     while($row = mysqli_fetch_array($musicRaw)){
         $temp = $row;
-        $temp['embed'] = '
-            &lt;iframe width=&quot;300&quot; height=&quot;300&quot; src=&quot;https://www.youtube.com/embed/'
+        $temp['embed'] = '&lt;iframe width=&quot;300&quot; height=&quot;300&quot; src=&quot;https://www.youtube.com/embed/'
             .$row['link']
             .'&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';
         $music[] = $temp;

@@ -1,10 +1,9 @@
 <?php include('includes/title.php') ?>
 <?php include('includes/sidebar.php') ?>
 
-<form action="<?php echo Config::get('controllersPath'); ?>/submitController.php" method="POST" target="theFrame" style="font-size:16px;">
+<form action="<?php echo Config::get('controllersPath'); ?>submitController.php" method="POST" target="theFrame" style="font-size:16px;">
 	<span style="font-size:23px;">New music? Awesome!</span><br><br>
-	Just paste the embed code here:<br> <textarea style="width:100%; max-width:400px; height:75px;" name="embed"></textarea><br>
-	Please make sure the height and width are 300px.<br><br>
+	Just paste the embed code here:<br> <input type="text" name="embed"><br><br>
 	What type is it?
     <?php
         if(count($genres) > 0){
@@ -28,6 +27,6 @@
 	<input type="submit" class="submit-button option" value="Submit"><br><br>
 </form>
 
-<iframe name="theFrame" style="height:0px; width:0px; display:none; margin:0; padding:0; border:0;"></iframe>
+<iframe name="theFrame" id="theFrame" style="height:0px; width:0px; display:none; margin:0; padding:0; border:0;"></iframe>
 
 <?php include('includes/closing.php') ?>

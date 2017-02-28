@@ -16,10 +16,10 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule ^(([a-z0-9\-]+/)*[a-z0-9\-]+)$ $1/ [NC,R=301,L]
 
 RewriteRule ^([DM][0-9]*?)/$ controllers/controller.php?loc=5&id=$1 [NC]
-RewriteRule ^\/?$ controllers/controller.php?loc=1 [NC]
+RewriteRule ^\/?$ controllers/controller.php?loc=3 [NC]
 RewriteRule ^add/$ controllers/controller.php?loc=2 [NC]
 RewriteRule ^discover/page/([0-9]*?)/$ controllers/controller.php?loc=3&page=$1 [NC]
-RewriteRule ^discover/$ controllers/controller.php?loc=3 [NC]
+RewriteRule ^message/$ controllers/controller.php?loc=1 [NC]
 RewriteRule ^all/page/([0-9]*?)/$ controllers/controller.php?loc=4&page=$1 [NC]
 RewriteRule ^all/$ controllers/controller.php?loc=4 [NC]
 RewriteRule ^gift/$ controllers/controller.php?loc=6 [NC]

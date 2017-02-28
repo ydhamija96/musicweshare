@@ -1,9 +1,9 @@
 <?php
 class Config{
     private static $config = [
-        'assetsPath' => 'http://localhost/musicweshare/assets/',
-        'controllersPath' => 'http://localhost/musicweshare/controllers/',
-        'base' => 'http://localhost/musicweshare/'
+        'assetsPath' => 'http://localhost/TheMusicWeShare/musicweshare/assets/',
+        'controllersPath' => 'http://localhost/TheMusicWeShare/musicweshare/controllers/',
+        'base' => 'http://localhost/TheMusicWeShare/musicweshare/'
     ];
     private static $mysqlConnection = 0;
 
