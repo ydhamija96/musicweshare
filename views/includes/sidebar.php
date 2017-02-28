@@ -1,7 +1,7 @@
 <div id="sidebar" class="col-xs-3">
     <!-- <a href="<?php echo Config::get('base').'message/'; ?>"><div class="option <?php if($mode == 1){echo "active";} ?>">Message</div></a> -->
     <br>
-    <a href="<?php echo Config::get('base'); ?>discover/"><div class="option <?php if($mode == 3){echo "active";} ?>">Discover Music</div></a>
+    <a href="<?php echo Config::get('base'); ?>"><div class="option <?php if($mode == 3){echo "active";} ?>">Discover Music</div></a>
     <br>
     <a href="<?php echo Config::get('base'); ?>add/"><div class="option <?php if($mode == 2){echo "active";} ?>">Save Music</div></a>
     <br><br>
