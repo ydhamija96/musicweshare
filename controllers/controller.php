@@ -98,13 +98,14 @@ elseif($mode == 4){ //music
         include('../views/404.php');
         exit;
     }
-    if(isset($_COOKIE['randomSeed'])){
-        $seed = intval($_COOKIE['randomSeed']);
-    }
-    else{
-        $seed = rand(1,100000);
-        setcookie('randomSeed', $seed);
-    }
+    // if(isset($_COOKIE['randomSeed'])){
+    //     $seed = intval($_COOKIE['randomSeed']);
+    // }
+    // else{
+    //     $seed = rand(1,100000);
+    //     setcookie('randomSeed', $seed);
+    // }
+    $seed = 1;
     $offset = ($page - 1)*$perpage;
     if($selectedGenre != false){
         $checkType = mysqli_query($con, "SELECT * from types WHERE type = '$selectedGenre'");
