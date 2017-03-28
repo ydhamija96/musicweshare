@@ -22,6 +22,17 @@ body{
 	width:100%;
 	min-width:530px;
 }
+#background-image{
+	position:fixed;
+	height:100%;
+	width:100%;
+	background-image:url("../background-image.png");
+	background-repeat:no-repeat;
+	background-size:auto 100%;
+	background-position-y:0px;
+	background-position-x:25px;
+	opacity:0.13;
+}
 .eachVideoBox{
 	margin:10px;
 	float:left;

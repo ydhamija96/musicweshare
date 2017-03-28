@@ -22,6 +22,7 @@
 </head>
 <body>
 	<div id="wrapper">
+		<div id="background-image"></div>
 		<div id="title" class="col-xs-12">
 			<a style="float:right;" class="col-xs-9" href="<?php echo Config::get('base'); ?>"><h1 class="option">The Music We Share</h1></a>
 		</div>
